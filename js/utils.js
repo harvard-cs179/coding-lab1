@@ -1,5 +1,4 @@
 
-
 function sleep(milliseconds) {
 	var start = new Date().getTime();
 	for (var i = 0; i < 1e7; i++) {
@@ -15,7 +14,6 @@ export let uniqueId = (prefix) => {
 	sleep(1);// wait for one millisecond to avoid duplicates
 	return (prefix ? prefix + id	: id);
 };
-
 
 // return time elapsed 
 export let timespan = (date)=>{
@@ -44,3 +42,25 @@ export let timespan = (date)=>{
     }
     return Math.floor(seconds) + " seconds";
 }
+
+// load from local storage
+export const loadState = () => {
+	try {
+		const serializedState = localStorage.getItem('state');
+		if (serializedState === null) {
+			return undefined;
+		}
+		return JSON.parse(serializedState);
+	} catch (err) {
+		return undefined;
+	}
+};
+// save current state to local storage
+export const saveState = (state) => {
+	try {
+		const serializedState = JSON.stringify(state);
+		localStorage.setItem('state', serializedState);
+
+	} catch (err) {
+	}
+};

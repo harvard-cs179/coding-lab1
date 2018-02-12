@@ -32,7 +32,7 @@ let posts = [
 /**
  * TODO 1: Add a new post using any image (e.g., "img/posts3.jpg"). Other properties remain the same.
  *  hint: generate a unique id using "uniqueId('post_')"
- *  hint: posts[id] = { ... }
+ *  hint: posts.push( { ... } )
  *  hint: for "datetime", use now (i.e., new Date())
  */
 

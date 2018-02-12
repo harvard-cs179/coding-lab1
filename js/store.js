@@ -73,6 +73,9 @@ export default function createStore(initState, updateState=root){
   let state = initState;
   let listeners = []
 
+  function getState(){
+    return state;
+  }
   function subscribe(listener){
     listeners.push(listener);
   }
